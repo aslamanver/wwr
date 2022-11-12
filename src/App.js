@@ -19,26 +19,26 @@ const app = new PIXI.Application({
 const ticker = PIXI.Ticker.shared;
 ticker.autoStart = false;
 
-let sky = PIXI.Sprite.from("/resources/backgrounds/sky.png");
-let road = PIXI.Sprite.from("/resources/backgrounds/road.png");
-let mountainLeft = PIXI.Sprite.from("/resources/backgrounds/mountain_left.png");
+let sky = PIXI.Sprite.from("resources/backgrounds/sky.png");
+let road = PIXI.Sprite.from("resources/backgrounds/road.png");
+let mountainLeft = PIXI.Sprite.from("resources/backgrounds/mountain_left.png");
 let mountainRight = PIXI.Sprite.from(
-  "/resources/backgrounds/mountain_right.png"
+  "resources/backgrounds/mountain_right.png"
 );
-let mountainFade = PIXI.Sprite.from("/resources/backgrounds/mountain_fade.png");
-let sideRoadLeft = PIXI.Sprite.from("/resources/backgrounds/sideroad_left.png");
+let mountainFade = PIXI.Sprite.from("resources/backgrounds/mountain_fade.png");
+let sideRoadLeft = PIXI.Sprite.from("resources/backgrounds/sideroad_left.png");
 let sideRoadRight = PIXI.Sprite.from(
-  "/resources/backgrounds/sideroad_right.png"
+  "resources/backgrounds/sideroad_right.png"
 );
-let enemyCenter = PIXI.Sprite.from("/resources/cars/enemy_center.png");
-let enemyRight = PIXI.Sprite.from("/resources/cars/enemy_right.png");
-let enemyLeft = PIXI.Sprite.from("/resources/cars/enemy_left.png");
-let carCenter = PIXI.Sprite.from("/resources/cars/car_center.png");
-let carRight = PIXI.Sprite.from("/resources/cars/car_right.png");
-let carLeft = PIXI.Sprite.from("/resources/cars/car_left.png");
+let enemyCenter = PIXI.Sprite.from("resources/cars/enemy_center.png");
+let enemyRight = PIXI.Sprite.from("resources/cars/enemy_right.png");
+let enemyLeft = PIXI.Sprite.from("resources/cars/enemy_left.png");
+let carCenter = PIXI.Sprite.from("resources/cars/car_center.png");
+let carRight = PIXI.Sprite.from("resources/cars/car_right.png");
+let carLeft = PIXI.Sprite.from("resources/cars/car_left.png");
 
 let texture = new PIXI.BaseTexture(
-  "/resources/animations/explosion_spritesheet.avif"
+  "resources/animations/explosion_spritesheet.avif"
 );
 
 let spriteSheet = [
