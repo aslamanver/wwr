@@ -10,5 +10,5 @@ Click the below image and have fun with racing.
 
 ### VIDEO DEMO
 
-[screen-recording.mp4](https://github.com/aslamanver/wwr/blob/master/docs/resources/screen-recording.mp4)
+[Video Link](https://youtu.be/oMR0Rj07tMA)
 
