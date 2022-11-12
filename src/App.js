@@ -1,9 +1,9 @@
 import "./App.css";
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import * as PIXI from "pixi.js";
+import { sound } from "@pixi/sound";
 import io from "socket.io-client";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 
@@ -40,6 +40,20 @@ let carLeft = PIXI.Sprite.from("resources/cars/car_left.png");
 let texture = new PIXI.BaseTexture(
   "resources/animations/explosion_spritesheet.avif"
 );
+
+const backgroundSound = sound.add(
+  "background",
+  "resources/audios/background.mp3"
+);
+
+const crashSound = sound.add("crash", "resources/audios/crash.mp3");
+
+if (!backgroundSound.isPlaying) {
+  backgroundSound.play({
+    autoplay: true,
+    loop: true,
+  });
+}
 
 let spriteSheet = [
   new PIXI.Texture(
@@ -424,9 +438,12 @@ function App() {
         if (enemyPosition.y > carPosition.y) {
           player.visible = true;
           ticker.stop();
+          if (!crashSound.isPlaying) {
+            crashSound.play({ loop: false });
+          }
           setTimeout(() => {
             restart();
-          }, 2000);
+          }, 5000);
         }
       }
 
@@ -522,7 +539,7 @@ function App() {
             <h4>Players</h4>
             {players.map((e) => (
               <div className="player-li" key={Math.random()}>
-                {/* <Avatar src={e.avatar} /> */}
+                <Avatar src={e.avatar} />
                 <span>{e.name}</span>
               </div>
             ))}
